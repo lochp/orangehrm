@@ -1,0 +1,51 @@
+PerformanceObjective:
+  pluginName: orangehrmPerformanceObjectivePlugin
+  hasSelectableRows: false
+  unselectableRowIds: []
+  idValueGetter: getId
+  title: 'Performance Objectives'
+  tableWidth: 100%
+  hasSummary: false
+  summary: []
+  buttonsPosition: before-data
+  assets: []
+  jsInitMethods: []
+PerformanceObjectiveAdmin:
+  pluginName: orangehrmPerformanceObjectivePlugin
+  hasSelectableRows: true
+  unselectableRowIds: []
+  idValueGetter: getId
+  title: 'Performance Objectives'
+  tableWidth: 100%
+  hasSummary: false
+  summary: []
+  buttons:
+    Add:      
+      label: Add
+    Delete:
+      label: Delete
+      class: delete
+      data-target: '#deleteConfModal'
+      data-toggle: modal 
+  buttonsPosition: before-data
+  formMethod: post
+  formAction: 'index.php/performance/deletePerformanceObjective'
+  assets: []
+  jsInitMethods: []
+PerformanceObjectiveLog:
+  pluginName: orangehrmPerformanceObjectivePlugin
+  hasSelectableRows: false
+  unselectableRowIds: []
+  idValueGetter: getId
+  title: ''
+  tableWidth: 100%
+  hasSummary: false
+  summary: []
+  buttons:
+    Add:      
+      label: Add
+  buttonsPosition: before-data
+  formMethod: post
+  formAction: 'index.php/performance/deletePerformanceObjectiveLogItem'
+  assets: []
+  jsInitMethods: []

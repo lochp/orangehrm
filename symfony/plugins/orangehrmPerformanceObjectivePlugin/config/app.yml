@@ -1,0 +1,4 @@
+# default values
+all:
+  orangehrmPerformanceObjectivePlugin:
+    version: '0.2'   

@@ -1,0 +1,24 @@
+diff a/symfony/plugins/orangehrmTimePlugin/lib/form/TimesheetForm.php b/symfony/plugins/orangehrmTimePlugin/lib/form/TimesheetForm.php	(rejected hunks)
+@@ -58,22 +58,6 @@
+         $endDate = $timesheet->getEndDate();
+         $date = $this->getDatesOfTheTimesheetPeriod($startDate,$endDate);
+ 
+-        //Marc 7/14/2016 Modif Duplicated Timesheet
+-/*
+-        if ($test == "on" && $numberOfRows == null) :
+-            if (date("m", $startDate) == 1) :
+-                $month = 12;
+-            else :
+-                $month = date("m", $startDate) - 1;
+-            endif;
+-            $previousDate = mktime(0, 0, 0, $month, date("d", $startDate) + 1, date("Y", $startDate));
+-            $previousTimesheetId = $this->getTimesheetId($previousDate,$employeeId);
+-            $lastTempRows = $this->getTimesheet($previousDate,$employeeId,$previousTimesheetId);
+-            $numberOfRows = $lastTempRows;
+-        endif;
+-*/
+-        //End Modif
+-
+         if ($numberOfRows == null) :
+ 
+             //Marc Modif 7/12/2016

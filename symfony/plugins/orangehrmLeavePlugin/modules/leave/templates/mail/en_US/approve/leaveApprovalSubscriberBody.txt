@@ -1,0 +1,13 @@
+<html>
+<head></head>
+<body style='font-family:Arial;font-size:0.9em;'>
+Hi %recipientFirstName%,<br/><br/>
+
+%performerFullName% has approved leave request of %applicantFullName%. The leave details:<br/>
+
+%leaveDetails% <br/>
+
+Thank you.<br/><br/>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+diff a/symfony/plugins/orangehrmTimePlugin/modules/time/actions/editTimesheetAction.class.php b/symfony/plugins/orangehrmTimePlugin/modules/time/actions/editTimesheetAction.class.php	(rejected hunks)
+@@ -61,13 +61,14 @@
+     }
+ 
+     public function execute($request) {
+-        
++
++        $this->test = $request->getParameter('duplicate');
++
+         $this->listForm = new DefaultListForm();
+ 
+         $this->backAction = $request->getParameter('actionName');
+         $this->timesheetId = $request->getParameter('timesheetId');
+         $this->employeeId = $request->getParameter('employeeId');
+-        $this->test = $request->getParameter('duplicate');
+ 
+         $loggedInEmpNumber = $this->getContext()->getUser()->getEmployeeNumber();
+ 

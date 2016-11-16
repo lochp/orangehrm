@@ -1,0 +1,7 @@
+Hi %recipientFirstName%,
+
+%performerFullName% has applied for leave. The leave details:
+
+%leaveDetails% Thank you.
+
+This is an automated notification, please log in to Upskills HRM to approve/reject/cancel the employee's leave request.

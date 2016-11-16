@@ -1,0 +1,11 @@
+<html>
+<head></head>
+<body style='font-family:Arial;font-size:0.9em;'>
+Hi %recipientFirstName%,<br/><br/>
+
+%performerFullName% has applied for leave. Please find the leave details:<br/>
+
+%leaveDetails%<br/>
+Kindly log in to <a href='http://hr.upskills.com' style='text-decoration:none'>Upskills HRM</a> to respond to the leave Request<br><br><br>
+</body>
+</html>

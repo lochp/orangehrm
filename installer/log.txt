@@ -1,0 +1,20 @@
+Client Info
+
+User Agent : Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Remote Address : ::1
+
+Server Info
+
+Host : localhost
+PHP Version : 5.5.30
+Server : Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.5.30
+Admin : postmaster@localhost
+
+Document Root : C:/XAMPP/htdocs
+ROOT_PATH : C:\XAMPP\htdocs\orangehrm_20161012
+
+OrangeHRM Installation Log
+
+Wed, 19 Oct 2016 05:13:31 +0200 DB Creation - Starting
+Wed, 19 Oct 2016 05:13:31 +0200 DB Creation - Done
+Wed, 19 Oct 2016 05:13:31 +0200 DB Creation - No Errors

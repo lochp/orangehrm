@@ -1,0 +1,8 @@
+addPerformanceObjectiveSuccess:
+  layout: freshorange
+addPerformanceObjectiveLogSuccess:
+  layout: freshorange
+viewPerformanceObjectiveListSuccess:
+  layout: freshorange
+viewPerformanceObjectiveLogListSuccess:
+  layout: freshorange

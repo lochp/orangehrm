@@ -1,0 +1,15 @@
+<html>
+<head></head>
+<body style='font-family:Arial;font-size:0.9em;'>
+Hi %recipientFirstName%,<br/><br/>
+
+%performerFullName% has assigned leave to %assigneeFullName%. The leave details:<br/>
+
+%leaveDetails%
+<br/><br/>You were sent this mail, as you are a supervisor assigned for %assigneeFullName%.
+
+ <br/><br/>Thank you.<br/><br/>
+
+<i>This is an automated notification, please do not reply to this email.</i>
+</body>
+</html>
