@@ -144,12 +144,12 @@ class ReportGeneratorService extends BaseService {
                 
                 $runtimeFilterFieldWidgetNamesAndLabels[] = $tempArray;
             }
-            /* if ($isAdmin == 'Yes'){
-	            $tempArray['widgetName'] = new ohrmWidgetProjectListWithAllOption(array('choices' => array('1' => 'Raw data', '2' => 'Timesheet')));
+            if ($isAdmin == 'Yes'){
+	            $tempArray['widgetName'] = 'ohrmWidgetTimesheetFormatOption';
 	            $tempArray['labelName'] = 'admin_report_type';
 	            $tempArray['required'] = true;
 	            $runtimeFilterFieldWidgetNamesAndLabels[] = $tempArray;
-            } */
+            }
             return $runtimeFilterFieldWidgetNamesAndLabels;
         } else {
             return null;

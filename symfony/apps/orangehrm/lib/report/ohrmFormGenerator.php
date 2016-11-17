@@ -33,7 +33,7 @@ class ohrmFormGenerator {
             }else{
                 $ohrmWidget = new $widgetName(array(), array('id' => $labelName));
             }
-                        
+            
             if ($ohrmWidget->hasOption('data_groups')) {
                 $ohrmWidget->setOption('data_groups', $dataGroups);
             }

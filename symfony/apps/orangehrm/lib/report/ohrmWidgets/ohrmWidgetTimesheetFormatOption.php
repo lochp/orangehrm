@@ -21,8 +21,7 @@ class ohrmWidgetTimesheetFormatOption extends sfWidgetForm implements ohrmEmbedd
 
     public function configure($options = array(), $attributes = array()) {
 
-
-        $this->addOption('choices', array('1' => __("Raw data"), '2' => __('Timesheet')));
+    	$this->addOption('choices', array(__("Raw data"),__('Timesheet')));
     }
 
     public function render($name, $value = null, $attributes = array(), $errors = array()) {
