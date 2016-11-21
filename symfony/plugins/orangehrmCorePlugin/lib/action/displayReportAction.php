@@ -421,8 +421,14 @@ abstract class displayReportAction extends basePimReportAction {
 			$fontColor = '0095ff';
             
             $isAdmin = $_SESSION['isAdmin'];
-            if ($isAdmin == 'No'){ // Is not Admin
+            if ($isAdmin == 'No' || ($isAdmin == 'Yes' && $_REQUEST['time']['admin_report_type'] == 1)){ // Is not Admin
 
+            	if ($isAdmin == 'Yes' && $_REQUEST['time']['admin_report_type'] == 1){ // 0: Raw-data; 1: Timesheet
+            		$empId = $_REQUEST['time']['employee_name']['empId'];
+            	}else{
+            		$empId = $_SESSION['empNumber'];
+            	}
+            	
 //             	$gdImage = imagecreatefromjpeg('/symfony/web/images/upskills-icon.png');
 //             	$objDrawing = new PHPExcel_Worksheet_Drawing();
 //             	$objDrawing->setPath('./symfony/web/images/upskills-icon.png');
@@ -535,7 +541,6 @@ abstract class displayReportAction extends basePimReportAction {
             	$projectService = new ProjectService();
             	
             	//Get all the important values of the form
-            	$empId = $_SESSION['empNumber'];
             	$employee = $employeeService->getEmployee($empId);
             	$operationCountry = $employee->getOperationalCountry();
             	if ($arrayValues["project_date_range"]["from"]) {

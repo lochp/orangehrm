@@ -11,6 +11,7 @@
  * @property integer $min_rating
  * @property integer $max_rating
  * @property integer $default_kpi
+ * @property string $description
  * @property JobTitle $JobTitle
  * @property Doctrine_Collection $ReviewerRating
  * 
@@ -20,6 +21,7 @@
  * @method integer             getMinRating()      Returns the current record's "min_rating" value
  * @method integer             getMaxRating()      Returns the current record's "max_rating" value
  * @method integer             getDefaultKpi()     Returns the current record's "default_kpi" value
+ * @method string              getDescription()    Returns the current record's "description" value
  * @method JobTitle            getJobTitle()       Returns the current record's "JobTitle" value
  * @method Doctrine_Collection getReviewerRating() Returns the current record's "ReviewerRating" collection
  * @method Kpi                 setId()             Sets the current record's "id" value
@@ -28,6 +30,7 @@
  * @method Kpi                 setMinRating()      Sets the current record's "min_rating" value
  * @method Kpi                 setMaxRating()      Sets the current record's "max_rating" value
  * @method Kpi                 setDefaultKpi()     Sets the current record's "default_kpi" value
+ * @method Kpi                 setDescription()    Sets the current record's "description" value
  * @method Kpi                 setJobTitle()       Sets the current record's "JobTitle" value
  * @method Kpi                 setReviewerRating() Sets the current record's "ReviewerRating" collection
  * 
@@ -67,6 +70,10 @@ abstract class BaseKpi extends sfDoctrineRecord
              'type' => 'integer',
              'length' => 2,
              ));
+        $this->hasColumn('description', 'string', 1000, array(
+        		'type' => 'string',
+        		'length' => 1000,
+        ));
     }
 
     public function setUp()

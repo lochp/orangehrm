@@ -2,7 +2,7 @@ all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn: 'mysql:host=localhost;port=3306;dbname=hrupskills'
+      dsn: 'mysql:host=localhost;port=3306;dbname=ohm_vn'
       username: root
       password: 123456
       attributes: { export: tables }
@@ -10,6 +10,6 @@ test:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn: 'mysql:host=localhost;port=3306;dbname=hrupskills'
+      dsn: 'mysql:host=localhost;port=3306;dbname=ohm_vn'
       username: root
       password: 123456

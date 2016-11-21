@@ -3,7 +3,7 @@ Kpi:
   hasSelectableRows: true
   unselectableRowIds: []
   idValueGetter: getId
-  title: 'Key Performance Indicators for Job Title'
+  title: 'Skills for Job Title'
   tableWidth: 100%
   hasSummary: false
   summary: []

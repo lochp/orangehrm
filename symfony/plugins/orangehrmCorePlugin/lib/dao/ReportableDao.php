@@ -414,8 +414,7 @@ class ReportableDao {
                             ->select("filter_field_id")
                             ->from("SelectedFilterField")
                             ->where("report_id = ?", $reportId)
-//                             ->andWhere("type = ?", $type)
-            ;
+                            ->andWhere("type = ?", $type);
 
             if ($order) {
                 $query->orderBy("filter_field_order");

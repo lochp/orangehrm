@@ -52,13 +52,13 @@ if($employeeReportsPermissions->canRead()){
 
 
          $('#viewbutton').click(function() {
-//             var emp_name = $('#employee_name_empName').val();
-//             if (emp_name == undefined || emp_name == null || trim(emp_name) == '' || trim(emp_name) == 'Type for hints ...'){
-// 				if ($('#time_admin_report_type_name').val() == 2){
-//					alert(''+'<?php  echo __("You must enter employee name!"); ?>');
-// 					return;
-// 				}
-//             }
+            var emp_name = $('#employee_name_empName').val();
+            if (emp_name == undefined || emp_name == null || trim(emp_name) == '' || trim(emp_name) == 'Type for hints ...'){
+				if ($('#time_admin_report_type').val() == 1){ // Admin selected Timesheet
+					alert(''+'<?php  echo __("You must enter employee name!"); ?>');
+					return;
+				}
+            }
             $('#reportForm').submit();
         });
 

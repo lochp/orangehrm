@@ -17,6 +17,8 @@ Kpi:
       type: integer(11)
     default_kpi:
       type: integer(2)
+    description:
+      type: string(1000)
   relations:
     JobTitle:
       local: jobTitleCode

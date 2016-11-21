@@ -144,7 +144,7 @@ class ReportGeneratorService extends BaseService {
                 
                 $runtimeFilterFieldWidgetNamesAndLabels[] = $tempArray;
             }
-            if ($isAdmin == 'Yes'){
+            if ($isAdmin == 'Yes' && $reportId == 2){
 	            $tempArray['widgetName'] = 'ohrmWidgetTimesheetFormatOption';
 	            $tempArray['labelName'] = 'admin_report_type';
 	            $tempArray['required'] = true;

@@ -53,8 +53,9 @@ class DefineKpiForm extends BasePefromanceSearchForm {
             'keyPerformanceIndicators' => new sfWidgetFormInput(array(), array('class' => 'formInputText')),
             'minRating' => new sfWidgetFormInput(array(), array('class' => 'formInputText')),
             'maxRating' => new sfWidgetFormInput(array(), array('class' => 'formInputText')),
-            'makeDefault' => new sfWidgetFormInputCheckbox(array(), array('class' => 'formCheckbox'))
-                     
+            'makeDefault' => new sfWidgetFormInputCheckbox(array(), array('class' => 'formCheckbox')),
+        		// loc
+        		'description' => new sfWidgetFormTextarea(array(), array('class' => 'formTextarea'))
         );
         
         return $widgets;
@@ -72,7 +73,9 @@ class DefineKpiForm extends BasePefromanceSearchForm {
             'keyPerformanceIndicators' => new sfValidatorString(array('required' => true)),
             'minRating' => new sfValidatorString(array('required' => false)),
             'maxRating' => new sfValidatorString(array('required' => false)),
-            'makeDefault' => new sfValidatorString(array('required' => false))
+            'makeDefault' => new sfValidatorString(array('required' => false)),
+        		// loc
+        		'description' => new sfValidatorString(array('required' => false)),
         );
         return $validators;
     }
@@ -89,7 +92,9 @@ class DefineKpiForm extends BasePefromanceSearchForm {
             'keyPerformanceIndicators' => __('Skills') . $requiredMarker,
             'minRating' => __('Minimum Rating'). $requiredMarker,
             'maxRating' => __('Maximum Rating'). $requiredMarker,
-            'makeDefault' => __('Make Default Scale')
+            'makeDefault' => __('Make Default Scale'),
+        		// loc
+        		'description' => __('Description')
         );
         return $labels;
     }
@@ -116,6 +121,7 @@ class DefineKpiForm extends BasePefromanceSearchForm {
         } else {
             $kpi->setDefaultKpi(null);
         }
+        $kpi->setDescription($values['description']);
 
         $this->getKpiService()->saveKpi($kpi);
     }
@@ -134,6 +140,7 @@ class DefineKpiForm extends BasePefromanceSearchForm {
             $this->setDefault('minRating', $kpi->getMinRating());
             $this->setDefault('maxRating', $kpi->getMaxRating());
             $this->setDefault('makeDefault', $kpi->getDefaultKpi());
+            $this->setDefault('description', $kpi->getDesciption());
             
         } else {
             
