@@ -14,18 +14,20 @@
  * @property Employee $Employee
  * @property string $description
  * @property date $target_date
+ * @property string $objective_group
  * @property Doctrine_Collection $PerformanceObjectiveLog
  * @property Doctrine_Collection $PerformanceObjectiveReviewer
  * 
  * @method integer             getId()                         Returns the current record's "id" value
- * @method string              getObjectiveName()                Returns the current record's "objective_name" value
+ * @method string              getObjectiveName()              Returns the current record's "objective_name" value
  * @method integer             getEmpNumber()                  Returns the current record's "emp_number" value
  * @method timestamp           getAddedDate()                  Returns the current record's "added_date" value
  * @method timestamp           getModifiedDate()               Returns the current record's "modified_date" value
  * @method integer             getStatus()                     Returns the current record's "status" value
  * @method Employee            getEmployee()                   Returns the current record's "Employee" value
  * @method string              getDescription()                Returns the current record's "description" value
- * @method date                getTargetDate()                  Returns the current record's "target_date" value
+ * @method date                getTargetDate()                 Returns the current record's "target_date" value
+ * @method string              getObjectiveGroup()             Returns the current record's "objective_group" value
  * @method Doctrine_Collection getPerformanceObjectiveLog()      Returns the current record's "PerformanceObjectiveLog" collection
  * @method Doctrine_Collection getPerformanceObjectiveReviewer() Returns the current record's "PerformanceObjectiveReviewer" collection
  * @method PerformanceObjective    setId()                         Sets the current record's "id" value
@@ -36,7 +38,8 @@
  * @method PerformanceObjective    setStatus()                     Sets the current record's "status" value
  * @method PerformanceObjective    setEmployee()                   Sets the current record's "Employee" value
  * @method PerformanceObjective    setDescription()                Sets the current record's "description" value
- * @method PerformanceObjective    setTargetDate()                  Sets the current record's "target_date" value
+ * @method PerformanceObjective    setTargetDate()                 Sets the current record's "target_date" value
+ * @method PerformanceObjective    setObjectiveGroup()             Sets the current record's "objective_group" value
  * @method PerformanceObjective    setPerformanceObjectiveLog()      Sets the current record's "PerformanceObjectiveLog" collection
  * @method PerformanceObjective    setPerformanceObjectiveReviewer() Sets the current record's "PerformanceObjectiveReviewer" collection
  * 
@@ -111,6 +114,10 @@ abstract class BasePerformanceObjective extends sfDoctrineRecord
             'notnull' => false,
             'autoincrement' => false,
             'length' => 25,
+        ));
+        $this->hasColumn('objective_group', 'string', 3000, array(
+        		'type' => 'string',
+        		'length' => 3000,
         ));
     }
 

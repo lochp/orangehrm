@@ -38,6 +38,9 @@ PerformanceObjective:
       primary: false
       notnull: false
       autoincrement: false
+    objective_group:
+      type: string(3000)
+      notnull: false
   relations: 
     Employee:
       class: Employee

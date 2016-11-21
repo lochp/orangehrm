@@ -58,6 +58,7 @@ class AddPerformanceObjectiveForm extends sfForm {
             'assignedEmp' => new sfWidgetFormSelectMany(array('choices' => $assignedReviewersList)),
             'hdnTrckId' => new sfWidgetFormInputHidden(),
             'hdnMode' => new sfWidgetFormInputHidden(),
+        	'objective_group' => new sfWidgetFormChoice(array('choices' => array('Individual' => 'Individual', 'Develop/Build (Business)' => 'Develop/Build (Business)', 'Improve (Internal)' => 'Improve (Internal)', 'BAU (Client/Project)' => 'BAU (Client/Project)'))),
         ));
 
         $this->widgetSchema->setNameFormat('addPerformanceObjective[%s]');
@@ -69,7 +70,8 @@ class AddPerformanceObjectiveForm extends sfForm {
             'availableEmp' => new sfValidatorPass(),
             'assignedEmp' => new sfValidatorPass(array('required' => true)),
             'hdnTrckId' => new sfValidatorString(array('required' => false)),
-            'hdnMode' => new sfValidatorString(array('required' => false))
+            'hdnMode' => new sfValidatorString(array('required' => false)),
+        	'objective_group' => new sfValidatorString(array('required' => false)),
         ));
 
         $this->setDefaultValues($objectiveId);
@@ -115,6 +117,7 @@ class AddPerformanceObjectiveForm extends sfForm {
             $this->setDefault('hdnMode', 'edit');
             $this->setDefault('employeeName', array('empName' => $performanceObjective->getEmployee()->getFirstAndLastNames(), 'empId' => $performanceObjective->getEmployee()->getEmpNumber()));
             $this->setDefault('target_date', $performanceObjective->getTargetDate());
+            $this->setDefault('objective_group', $performanceObjective->getObjectiveGroup());
         }
     }
 
@@ -144,6 +147,7 @@ class AddPerformanceObjectiveForm extends sfForm {
         $assignedEmp = $this->getValue('assignedEmp');
         $description = $this->getValue('objective_description');
         $targetDate = $this->getValue('target_date');
+        $objectiveGroup = $this->getValue('objective_group');
 
         $performanceObjective = new PerformanceObjective();
 
@@ -162,6 +166,7 @@ class AddPerformanceObjectiveForm extends sfForm {
         $performanceObjective->setObjectiveName($objectiveName);
         $performanceObjective->setDescription($description);
         $performanceObjective->setTargetDate($targetDate);
+        $performanceObjective->setObjectiveGroup($objectiveGroup);
         //setting reviewers.
         $newReviewers = $performanceObjective->getPerformanceObjectiveReviewer();
         $newReviewers->clear();

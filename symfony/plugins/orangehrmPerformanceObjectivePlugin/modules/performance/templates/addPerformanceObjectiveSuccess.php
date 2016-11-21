@@ -16,7 +16,11 @@ use_stylesheets_for_form($form);
             
             <fieldset>
                 
-                <ol>          
+                <ol>       
+                	<li width="50%">
+                        <?php echo $form['objective_group']->renderLabel(__('Objective Group'). ' <em>*</em>'); ?>
+                        <?php echo $form['objective_group']->render(array("class" => "formInput", "maxlength" => 200, "style" => "width: 41%")); ?>
+                    </li>   
                     <li width="50%">
                         <?php echo $form['objective_name']->renderLabel(__('Objective Name'). ' <em>*</em>'); ?>
                         <?php echo $form['objective_name']->render(array("class" => "formInput", "maxlength" => 200, "style" => "width: 40%")); ?>
