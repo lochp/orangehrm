@@ -133,10 +133,10 @@ class PerformanceObjectiveDao extends BaseDao {
 
             $fDate = '1970-01-01 00:00:00';
             $tDate = '2999-01-01 23:59:59';
-            if (isset($parameters['from_date'])){
+            if (isset($parameters['from_date']) && $parameters['from_date'] != 'yyyy-mm-dd'){
             	$fDate = $parameters['from_date']. ' 00:00:00';
             }
-            if (isset($parameters['to_date'])){
+            if (isset($parameters['to_date'])  && $parameters['to_date'] != 'yyyy-mm-dd'){
             	$tDate = $parameters['to_date']. ' 23:59:59';
             }
             
