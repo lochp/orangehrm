@@ -47,7 +47,18 @@ class addPerformanceObjectiveAction extends basePerformanceAction {
         //set performance objective list
         $page = $request->getParameter('hdnAction') == 'search' ? 1 : $request->getParameter('pageNo', 1);
         $this->setPageNumber($page);
-        $searchParameter = array('page'=>$page, 'limit'=>sfConfig::get('app_items_per_page'));
+        $emp_num = null;
+        $fromDate = null;
+        $toDate = null;
+        if ($request->isMethod('post')) {
+        	/**
+        	 * Get parameters for search performance_objectives
+        	 */
+        	$emp_num = $_REQUEST['performanceObjectiveSearchForm']['employeeName']['empId'];
+        	$fromDate = $_REQUEST['performanceObjectiveSearchForm']['fromDte'];
+        	$toDate = $_REQUEST['performanceObjectiveSearchForm']['toDte'];
+        }
+        $searchParameter = array('page'=>$page, 'limit'=>sfConfig::get('app_items_per_page'), 'emp_number' => $emp_num, 'from_date' => $fromDate, 'to_date' => $toDate);
         $performanceObjectiveList = $this->getPerformanceObjectiveService()->getPerformanceObjectiveList($searchParameter);
         $performanceObjectiveListCount = $this->getPerformanceObjectiveService()->getPerformanceObjectiveListCount();
         $this->_setListComponent($performanceObjectiveList, $performanceObjectiveListCount);

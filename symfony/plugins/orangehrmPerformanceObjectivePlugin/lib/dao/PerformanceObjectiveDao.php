@@ -131,11 +131,27 @@ class PerformanceObjectiveDao extends BaseDao {
 
             $offset = ($parameters['page'] > 0) ? (($parameters['page'] - 1) * $parameters['limit']) : 0;
 
+            $fDate = '1970-01-01 00:00:00';
+            $tDate = '2999-01-01 23:59:59';
+            if (isset($parameters['from_date'])){
+            	$fDate = $parameters['from_date']. ' 00:00:00';
+            }
+            if (isset($parameters['to_date'])){
+            	$tDate = $parameters['to_date']. ' 23:59:59';
+            }
+            
             $q = Doctrine_Query :: create()
                     ->from('PerformanceObjective pt')
                     ->leftJoin('pt.Employee e')
                     ->where('pt.status=?', PerformanceObjective::STATUS_ACTIVE)
                     ->orderBy('e.firstName ASC');
+            if (isset($parameters['emp_number']) && $parameters['emp_number'] > 0){
+            	$q->andWhere('pt.emp_number=?', $parameters['emp_number']);
+            }
+            
+            $q->andWhere('pt.target_date >= ? ', $fDate);
+            $q->andWhere('pt.target_date <= ? ', $tDate);
+            
             $q->offset($offset);
 
             if ($parameters['limit'] != null) {
