@@ -2,7 +2,34 @@
 use_javascripts_for_form($form);
 use_stylesheets_for_form($form);
 ?>
+    <!-- Loc modified -->
+<div class="box " id="performance-list-search">
+    <div class="head">
+        <h1><?php echo __('Search Performance Objectives') ?></h1>
+    </div>
+    <div class="inner">
+        <form id="performanceObjectiveSearchForm" name="performanceObjectiveSearchForm" method="post" action="">
+            <fieldset>                
+                <ol>
+                    <?php echo $searchForm->render(); ?>
+                    <input type="hidden" name="pageNo" id="pageNo" value="" />
+                    <input type="hidden" name="hdnAction" id="hdnAction" value="search" />     
+                </ol>                            
+                <p>
+                    <input type="button" class="applybutton" id="searchBtn" value="<?php echo __('Search'); ?>" title="<?php echo __('Search'); ?>"/> 
+                    <input type="button" class="reset" name="_reset" value="<?php echo __('Reset'); ?>" title="<?php echo __('Reset'); ?>" id="btnReset" >
+                </p>                
+            </fieldset>
+
+        </form>
+
+    </div> 
+    <a href="#" class="toggle tiptip" title="<?php echo __(CommonMessages::TOGGABLE_DEFAULT_MESSAGE); ?>">&gt;</a>
+</div>
+<!-- End -->
+
 <div id="performanceObjective" class="box">
+    
         
     <div class="head">
         <h1 id="performanceObjectiveHeading"><?php echo __("Add Performance Objective"); ?></h1>
@@ -83,31 +110,6 @@ use_stylesheets_for_form($form);
     
 </div>
 
-<!-- Loc modified -->
-<div class="box " id="performance-list-search">
-    <div class="head">
-        <h1><?php echo __('Search Performance Objectives') ?></h1>
-    </div>
-    <div class="inner">
-        <form id="performanceObjectiveSearchForm" name="performanceObjectiveSearchForm" method="post" action="">
-            <fieldset>                
-                <ol>
-                    <?php echo $searchForm->render(); ?>
-                    <input type="hidden" name="pageNo" id="pageNo" value="" />
-                    <input type="hidden" name="hdnAction" id="hdnAction" value="search" />     
-                </ol>                            
-                <p>
-                    <input type="button" class="applybutton" id="searchBtn" value="<?php echo __('Search'); ?>" title="<?php echo __('Search'); ?>"/> 
-                    <input type="button" class="reset" name="_reset" value="<?php echo __('Reset'); ?>" title="<?php echo __('Reset'); ?>" id="btnReset" >
-                </p>                
-            </fieldset>
-
-        </form>
-
-    </div> 
-    <a href="#" class="toggle tiptip" title="<?php echo __(CommonMessages::TOGGABLE_DEFAULT_MESSAGE); ?>">&gt;</a>
-</div>
-<!-- End -->
     <?php include_component('core', 'ohrmList'); ?>
 
 <!-- Confirmation box HTML: Begins -->
