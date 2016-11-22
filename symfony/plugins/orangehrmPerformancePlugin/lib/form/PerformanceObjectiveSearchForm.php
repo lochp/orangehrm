@@ -32,7 +32,7 @@ class PerformanceObjectiveSearchForm extends BasePefromanceSearchForm {
             
             'employeeName' => new ohrmWidgetEmployeeNameAutoFill(array('loadingMethod' => 'ajax')),
             'fromDte' => new ohrmWidgetDatePicker(array(), array('id' => 'fromDte')),
-            'toDate' => new ohrmWidgetDatePicker(array(), array('id' => 'toDate')),
+            'toDte' => new ohrmWidgetDatePicker(array(), array('id' => 'toDte')),
             
         );
         return $widgets;
@@ -47,7 +47,7 @@ class PerformanceObjectiveSearchForm extends BasePefromanceSearchForm {
         $validators = array(
             'employeeName' => new ohrmValidatorEmployeeNameAutoFill(array('required' => true)),
             'fromDte' => new sfValidatorString(array('required' => false)),
-            'toDate' => new sfValidatorString(array('required' => false)),
+            'toDte' => new sfValidatorString(array('required' => false)),
         );
         return $validators;
     }
@@ -60,7 +60,7 @@ class PerformanceObjectiveSearchForm extends BasePefromanceSearchForm {
         $labels = array(
             'employeeName' => __('Employee Name'),           
             'fromDte' =>  __('From Date'),
-            'toDate' =>  __('To Date'),
+            'toDte' =>  __('To Date'),
         );
         return $labels;
     }

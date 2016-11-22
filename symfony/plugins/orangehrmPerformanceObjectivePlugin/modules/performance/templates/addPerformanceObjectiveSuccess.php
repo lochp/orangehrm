@@ -89,7 +89,7 @@ use_stylesheets_for_form($form);
         <h1><?php echo __('Search Performance Objectives') ?></h1>
     </div>
     <div class="inner">
-        <form id="performanceSearchForm" name="performanceSearchForm" method="post" action="">
+        <form id="performanceObjectiveSearchForm" name="performanceObjectiveSearchForm" method="post" action="">
             <fieldset>                
                 <ol>
                     <?php echo $searchForm->render(); ?>
@@ -145,3 +145,18 @@ use_stylesheets_for_form($form);
     var lang_invalid_assign = "<?php echo __("Employee cannot be assigned as his own reviewer")?>";
         
 </script>
+
+<script>
+    $(document).ready(function () {
+    	$('#searchBtn').click(function () {
+            $('#performanceObjectiveSearchForm').submit();
+        });
+    	$('#btnReset').click(function () {
+            $("#performanceObjectiveSearchForm_employeeName_empName").val('');
+            $("#performanceObjectiveSearchForm_employeeName_empId").val('');
+            $("#fromDate").val('yyyy-mm-dd');
+            $("#toDate").val('yyyy-mm-dd');
+            $('#performanceObjectiveSearchForm').submit();
+        });
+    });
+</script>    
