@@ -55,8 +55,10 @@ class addPerformanceObjectiveAction extends basePerformanceAction {
         $this->parmetersForListCompoment = $params;
 
         $objectiveId = $request->getParameter('id');
-            $this->setForm(new AddPerformanceObjectiveForm( array(), array('objectiveId' => $objectiveId), null));        
+        $this->setForm(new AddPerformanceObjectiveForm( array(), array('objectiveId' => $objectiveId), null));        
         
+        $this->searchForm = new PerformanceObjectiveSearchForm();    
+            
         if ($request->isMethod('post')) {
             $this->form->bind($request->getParameter('addPerformanceObjective'));
             if ($this->form->isValid()) {
